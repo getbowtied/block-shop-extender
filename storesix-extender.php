@@ -82,3 +82,13 @@ if( !function_exists('is_wp_version') ) {
 		return version_compare( $wp_version, $version, $operator );
 	}
 }
+
+function gbt_customizer_extender() {
+	if ( class_exists( 'Kirki' ) ) {
+		require_once 'includes/customizer/_social_media.php';
+	} else {
+		return;
+	}
+}
+
+add_action( 'init', 'gbt_customizer_extender' );
