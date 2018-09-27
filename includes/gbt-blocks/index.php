@@ -9,8 +9,8 @@ add_filter( 'block_categories', function( $categories, $post ) {
 	return array_merge(
 		array(
 			array(
-				'slug' => 'storesix',
-				'title' => __( 'Storesix', 'gbt-blocks' ),
+				'slug' => 'block-shop',
+				'title' => __( 'Block Shop', 'gbt-blocks' ),
 			),
 		),
 		$categories

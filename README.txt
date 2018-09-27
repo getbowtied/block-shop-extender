@@ -1,4 +1,4 @@
-=== Storesix Extender ===
+=== Block Shop Extender ===
 Contributors: getbowtied, vanesareinerth, adrianlbs
 Tags: gutenberg, blocks
 Requires at least: 4.9

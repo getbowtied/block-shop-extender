@@ -2,17 +2,17 @@
 // ---------------------------------------------
 $section = 'extender';
 
-Kirki::add_field( 'storesix', array(
+Kirki::add_field( 'block-shop', array(
     'type'        => 'repeater',
-    'label'       => esc_attr__( 'Social Media', 'storesix' ),
+    'label'       => esc_attr__( 'Social Media', 'block-shop' ),
     'section'     => $section,
     'priority'    => 10,
     'row_label'     => array(
         'type'      => 'field',
-        'value'     => esc_attr__('Social Media', 'storesix' ),
+        'value'     => esc_attr__('Social Media', 'block-shop' ),
         'field'     => 'platform',
     ),
-    'button_label' => esc_attr__('Add New Social Media Platform', 'storesix' ),
+    'button_label' => esc_attr__('Add New Social Media Platform', 'block-shop' ),
     'settings'     => 'social_media_platforms',
     'default'      => array(
         // 
@@ -20,10 +20,10 @@ Kirki::add_field( 'storesix', array(
     'fields' => array(
         'platform' => array(
             'type'        => 'select',
-            'label'       => esc_attr__( 'Platform', 'storesix' ),
+            'label'       => esc_attr__( 'Platform', 'block-shop' ),
             'default'     => '',
             'choices'     => array(
-                ''      => esc_attr__('Select Platform', 'storesix'),
+                ''      => esc_attr__('Select Platform', 'block-shop'),
                 // A
                 'airbnb' => 'airbnb' ,
                 'amazon' => 'amazon' ,
@@ -214,7 +214,7 @@ Kirki::add_field( 'storesix', array(
         ),
         'url' => array(
             'type'        => 'url',
-            'label'       => esc_attr__( 'URL', 'storesix' ),
+            'label'       => esc_attr__( 'URL', 'block-shop' ),
             'default'     => '',
         ),
     )

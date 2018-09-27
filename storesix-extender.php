@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Plugin Name:       		Storesix Extender
- * Plugin URI:        		https://github.com/getbowtied/storesix-extender
- * Description:       		Extends the functionality of Storesix with Gutenberg elements.
+ * Plugin Name:       		Block Shop Extender
+ * Plugin URI:        		https://github.com/getbowtied/block-shop-extender
+ * Description:       		Extends the functionality of Block Shop with Gutenberg elements.
  * Version:           		1.0
  * Author:            		GetBowtied
  * Author URI:        		https://getbowtied.com
  * Requires at least: 		4.9
  * Tested up to: 			4.9.8
  *
- * @package  Storesix Extender
+ * @package  Block Shop Extender
  * @author   GetBowtied
  */
 
@@ -33,11 +33,11 @@ function github_plugin_updater() {
 
 		$config = array(
 			'slug' 				 => plugin_basename(__FILE__),
-			'proper_folder_name' => 'storesix-extender',
-			'api_url' 			 => 'https://api.github.com/repos/getbowtied/storesix-extender',
-			'raw_url' 			 => 'https://raw.github.com/getbowtied/storesix-extender/master',
-			'github_url' 		 => 'https://github.com/getbowtied/storesix-extender',
-			'zip_url' 			 => 'https://github.com/getbowtied/storesix-extender/zipball/master',
+			'proper_folder_name' => 'block-shop-extender',
+			'api_url' 			 => 'https://api.github.com/repos/getbowtied/block-shop-extender',
+			'raw_url' 			 => 'https://raw.github.com/getbowtied/block-shop-extender/master',
+			'github_url' 		 => 'https://github.com/getbowtied/block-shop-extender',
+			'zip_url' 			 => 'https://github.com/getbowtied/block-shop-extender/zipball/master',
 			'sslverify'			 => true,
 			'requires'			 => '4.9',
 			'tested'			 => '4.9.8',
@@ -50,10 +50,10 @@ function github_plugin_updater() {
 	}
 }
 
-function gbt_storesix_gutenberg_blocks() {
+function gbt_blockshop_gutenberg_blocks() {
 
 	$theme = wp_get_theme();
-	if ( $theme->template != 'storesix') {
+	if ( $theme->template != 'block-shop') {
 		return;
 	}
 
@@ -63,13 +63,13 @@ function gbt_storesix_gutenberg_blocks() {
 		add_action( 'admin_notices', 'theme_warning' );
 	}
 }
-add_action( 'init', 'gbt_storesix_gutenberg_blocks' );
+add_action( 'init', 'gbt_blockshop_gutenberg_blocks' );
 
 if( !function_exists('theme_warning') ) {
 	function theme_warning() {
 
 		echo '<div class="message error woocommerce-admin-notice woocommerce-st-inactive woocommerce-not-configured">';
-		echo '<p>Storesix Extender is enabled but not effective. Please activate Gutenberg plugin in order to work.</p>';
+		echo '<p>Block Shop Extender is enabled but not effective. Please activate Gutenberg plugin in order to work.</p>';
 		echo '</div>';
 	}
 }

@@ -41,7 +41,7 @@
 	registerBlockType( 'getbowtied/latest-posts-grid', {
 		title: i18n.__( 'Latest Posts Grid' ),
 		icon: 'grid-view',
-		category: 'storesix',
+		category: 'block-shop',
 		supports: {
 			align: [ 'center', 'wide', 'full' ],
 		},
