@@ -7,8 +7,10 @@
  * Version:           		1.0
  * Author:            		GetBowtied
  * Author URI:        		https://getbowtied.com
- * Requires at least: 		4.9
- * Tested up to: 			4.9.8
+ * Text Domain:				block-shop-extender
+ * Domain Path:				/languages/
+ * Requires at least: 		5.0
+ * Tested up to: 			5.0.3
  *
  * @package  Block Shop Extender
  * @author   GetBowtied
@@ -22,8 +24,8 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-add_action( 'init', 'github_plugin_updater' );
-function github_plugin_updater() {
+add_action( 'init', 'github_bs_plugin_updater' );
+function github_bs_plugin_updater() {
 
 	include_once 'updater.php';
 
@@ -39,8 +41,8 @@ function github_plugin_updater() {
 			'github_url' 		 => 'https://github.com/getbowtied/block-shop-extender',
 			'zip_url' 			 => 'https://github.com/getbowtied/block-shop-extender/zipball/master',
 			'sslverify'			 => true,
-			'requires'			 => '4.9',
-			'tested'			 => '4.9.8',
+			'requires'			 => '5.0',
+			'tested'			 => '5.0',
 			'readme'			 => 'README.txt',
 			'access_token'		 => '',
 		);
