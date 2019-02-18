@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       		Block Shop Extender
  * Plugin URI:        		https://github.com/getbowtied/block-shop-extender
- * Description:       		Extends the functionality of Block Shop with Gutenberg elements.
+ * Description:       		Extends the functionality of Block Shop with theme specific shortcodes and page builder elements.
  * Version:           		1.0
  * Author:            		GetBowtied
  * Author URI:        		https://getbowtied.com
@@ -32,12 +32,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'block-shop-extender'
 );
 
-function gbt_blockshop_gutenberg_blocks() {
-
-	$theme = wp_get_theme();
-	if ( $theme->template != 'block-shop') {
-		return;
-	}
+// Blocks
+function gbt_blockshop_blocks() {
 
 	if( is_plugin_active( 'gutenberg/gutenberg.php' ) || is_wp_version('>=', '5.0') ) {
 		include_once 'includes/gbt-blocks/index.php';
@@ -45,14 +41,25 @@ function gbt_blockshop_gutenberg_blocks() {
 		add_action( 'admin_notices', 'theme_warning' );
 	}
 }
-add_action( 'init', 'gbt_blockshop_gutenberg_blocks' );
+add_action( 'init', 'gbt_blockshop_blocks' );
+
+// Customizer Extender
+function gbt_customizer_extender() {
+	if ( class_exists( 'Kirki' ) ) {
+		require_once 'includes/customizer/_social_media.php';
+	} else {
+		return;
+	}
+}
+add_action( 'init', 'gbt_customizer_extender' );
 
 if( !function_exists('theme_warning') ) {
 	function theme_warning() {
-
-		echo '<div class="message error woocommerce-admin-notice woocommerce-st-inactive woocommerce-not-configured">';
-		echo '<p>Block Shop Extender is enabled but not effective. Please activate Gutenberg plugin in order to work.</p>';
-		echo '</div>';
+		?>
+		<div class="error">
+			<p>Block Shop Extender plugin couldn't find the Block Editor (Gutenberg) on this site. It requires WordPress 5+ or Gutenberg installed as a plugin.</p>
+		</div>
+		<?php
 	}
 }
 
@@ -64,13 +71,3 @@ if( !function_exists('is_wp_version') ) {
 		return version_compare( $wp_version, $version, $operator );
 	}
 }
-
-function gbt_customizer_extender() {
-	if ( class_exists( 'Kirki' ) ) {
-		require_once 'includes/customizer/_social_media.php';
-	} else {
-		return;
-	}
-}
-
-add_action( 'init', 'gbt_customizer_extender' );
