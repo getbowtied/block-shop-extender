@@ -7,9 +7,18 @@ Stable tag: 1.0
 Requires PHP: 5.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-~Current Version:1.0~
 
-Extends the functionality of StoreSix with Gutenberg elements.
+Extends the functionality of Block Shop theme by adding theme specific features.
+
+== Description ==
+
+Companion plugin for the **Block Shop** theme. Extends the functionality by adding theme specific features.
+
+**Gutenberg Blocks:**
+- Blog Posts
+
+**Features:**
+- Adds social sharing options
 
 == Changelog ==
 

@@ -24,33 +24,13 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
-add_action( 'init', 'github_bs_plugin_updater' );
-function github_bs_plugin_updater() {
-
-	include_once 'updater.php';
-
-	define( 'WP_GITHUB_FORCE_UPDATE', true );
-
-	if ( is_admin() ) {
-
-		$config = array(
-			'slug' 				 => plugin_basename(__FILE__),
-			'proper_folder_name' => 'block-shop-extender',
-			'api_url' 			 => 'https://api.github.com/repos/getbowtied/block-shop-extender',
-			'raw_url' 			 => 'https://raw.github.com/getbowtied/block-shop-extender/master',
-			'github_url' 		 => 'https://github.com/getbowtied/block-shop-extender',
-			'zip_url' 			 => 'https://github.com/getbowtied/block-shop-extender/zipball/master',
-			'sslverify'			 => true,
-			'requires'			 => '5.0',
-			'tested'			 => '5.0',
-			'readme'			 => 'README.txt',
-			'access_token'		 => '',
-		);
-
-		new WP_GitHub_Updater( $config );
-
-	}
-}
+// Plugin Updater
+require 'core/updater/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/plugin.json',
+	__FILE__,
+	'block-shop-extender'
+);
 
 function gbt_blockshop_gutenberg_blocks() {
 
