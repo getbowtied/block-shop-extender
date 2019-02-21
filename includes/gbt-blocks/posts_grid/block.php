@@ -60,48 +60,23 @@ if ( ! function_exists( 'gbt_18_bs_render_frontend_posts_grid' ) ) {
 		ob_start();
 		        
 	    if ( !empty($recentPosts) ) : ?>
-
-	        <div class="gbt_18_bs_posts_grid align<?php echo $align; ?>">
-	    
-	    		<div class="gbt_18_bs_posts_grid_wrapper columns-<?php echo $columns; ?>">
-		                    
-		            <?php foreach($recentPosts as $post) : ?>
-		        
-		                <?php $post_format = get_post_format($post->ID); ?>
-
-		                <div class="gbt_18_bs_posts_grid_item <?php echo $post_format ? $post_format: 'standard'; ?> <?php if ( !has_post_thumbnail($post->ID)) : ?>no_thumb<?php endif; ?>">
-		                    
-							<a class="gbt_18_bs_posts_grid_item_link" href="<?php echo get_post_permalink($post->ID); ?>">
-								<span class="gbt_18_bs_posts_grid_img_container">
-									<span class="gbt_18_bs_posts_grid_img_overlay"></span>
-									
-									<?php if ( has_post_thumbnail($post->ID)) :
-										$image_id = get_post_thumbnail_id($post->ID);
-										$image_url = wp_get_attachment_image_src($image_id,'large', true);
-									?>
-										<span class="gbt_18_bs_posts_grid_img gbt_18_bs_posts_grid_with_img" style="background-image: url(<?php echo esc_url($image_url[0]); ?> );"></span>
-									<?php else : ?>
-										<span class="gbt_18_bs_posts_grid_img gbt_18_bs_posts_grid_noimg"></span>
-									<?php endif;  ?>
-
-								</span><!--.from_the_blog_img_container-->
-								<h3 class="gbt_18_bs_posts_grid_title" href="<?php echo get_post_permalink($post->ID); ?>"><?php echo $post->post_title; ?></h3>
-							</a>
-		                    
-		                </div>
-		    
-		            <?php endforeach; // end of the loop. ?>
-
-			</div>
-
-		</div>
-
+        <div class="gbt_18_bs_posts_grid align<?php echo $align; ?>">
+        	<div class="gbt_18_bs_posts_grid_wrapper columns-<?php echo $columns; ?>">
+        		<?php foreach($recentPosts as $post) : ?><?php $post_format = get_post_format($post->ID); ?>
+    			<div class="gbt_18_bs_posts_grid_item <?php echo $post_format ? $post_format: 'standard'; ?> <?php if ( !has_post_thumbnail($post->ID)) : ?>no_thumb<?php endif; ?>">
+    				<div class="gbt_18_post_image"><a class="gbt_18_bs_posts_grid_item_link" href="<?php echo get_post_permalink($post->ID); ?>"><?php echo get_the_post_thumbnail($post->ID, 'post-thumbnail');?></a>
+					</div>
+					<div class="gbt_18_posts_categories"><?php the_category(' ','',$post->ID); ?></div>
+					<h2 class="gbt_18_bs_posts_grid_title"><a href="<?php echo get_post_permalink($post->ID); ?>" class="gbt_18_title_link"><?php echo $post->post_title; ?></a></h2>
+					<div class="gbt_18_bs_post_excerpt"><p><?php echo get_the_excerpt( $post->ID );?></p></div>
+					<div class="gbt_18_bs_read_more"><a class="gbt_18_bs_read_more" href="<?php echo get_post_permalink($post->ID); ?>"><?php _e("Read More", "block-shop"); ?></a></div>
+				</div>
+				<?php endforeach; // end of the loop. ?>
+ 			</div>
+ 		</div>
 		<?php
-
 		endif;
-		        
 		wp_reset_query();
-
 		return ob_get_clean();
 	}
 }
