@@ -16,7 +16,9 @@ if ( ! function_exists( 'gbt_18_bs_render_frontend_posts_grid' ) ) {
 			'categoriesSavedIDs'	=> '',
 			'align'					=> 'center',
 			'orderby'				=> 'date_desc',
-			'columns'				=> '3'
+			'columns'				=> '3',
+			'coverImage'			=> true,
+			'coverImageSize'		=> 'landscape'
 		), $attributes ) );
 
 		$args = array(
@@ -60,7 +62,7 @@ if ( ! function_exists( 'gbt_18_bs_render_frontend_posts_grid' ) ) {
 		ob_start();
 		        
 	    if ( !empty($recentPosts) ) : ?>
-        <div class="gbt_18_bs_posts_grid align<?php echo $align; ?>">
+        <div class="gbt_18_bs_posts_grid align<?php echo $align; ?> <?php if ($coverImage==true) echo 'cover-' . $coverImageSize; ?>">
         	<div class="gbt_18_bs_posts_grid_wrapper columns-<?php echo $columns; ?>">
         		<?php foreach($recentPosts as $post) : ?><?php $post_format = get_post_format($post->ID); ?>
     			<div class="gbt_18_bs_posts_grid_item <?php echo $post_format ? $post_format: 'standard'; ?> <?php if ( !has_post_thumbnail($post->ID)) : ?>no_thumb<?php endif; ?>">

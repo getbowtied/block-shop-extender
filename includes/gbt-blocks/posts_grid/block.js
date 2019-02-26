@@ -77,6 +77,15 @@
 				type: 'string',
 				default: 'date_desc'
 			},
+			/* Cover Image */
+			coverImage: {
+				type: 'bool',
+				default: true
+			},
+			coverImageSize: {
+				type: 'string',
+				default: 'landscape'
+			}
 		},
 
 		edit: function( props ) {
@@ -242,6 +251,7 @@
 
 				if( posts.length > 0) {
 
+
 					for ( let i = 0; i < posts.length; i++ ) {
 
 						let img = '';
@@ -259,23 +269,16 @@
 										key: 		'gbt_18_bs_editor_posts_grid_item_link',
 										className: 	'gbt_18_bs_editor_posts_grid_item_link'
 									},
-									el( "span", 
+									img != '' && el( "span", 
 										{ 
 											key: 		'gbt_18_bs_editor_posts_grid_img_container',
 											className: 	'gbt_18_bs_editor_posts_grid_img_container'
 										},
-										el( "span", 
-											{
-												key: 'gbt_18_bs_editor_posts_grid_img_overlay',
-												className: 'gbt_18_bs_editor_posts_grid_img_overlay'
-											}
-										),
-										el( "span", 
+										el( "img", 
 											{
 												key: 		'gbt_18_bs_editor_posts_grid_img',
-												className: 	'gbt_18_bs_editor_posts_grid_img ' + img_class,
-												style: 		{ backgroundImage: 'url(' + img + ')' }
-											}
+												src: 		img,
+											},
 										)
 									),
 									el( "span", 
@@ -284,6 +287,18 @@
 											className:  'gbt_18_bs_posts_grid_title',
 											dangerouslySetInnerHTML: { __html: posts[i]['title']['rendered'] }
 										}
+									),
+									el ( "span",
+										{
+											dangerouslySetInnerHTML: { __html: posts[i]['excerpt']['rendered'] }
+										}
+									),
+									el (
+										"span",
+										{
+											className: 'gbt_18_bs_posts_read_more',
+										},
+										i18n.__('Read More', 'block-shop-extender')
 									)
 								)
 							)
@@ -470,6 +485,41 @@
 								},
 							}
 						),
+						el( 'hr', {} ),
+						el(
+							'label',
+							{},
+							el(
+								'input', 
+								{
+									type:  'checkbox',
+									key:   'bs-posts-grid-cover-image',
+									checked: attributes.coverImage,
+									onChange: function (value){
+										props.setAttributes( {coverImage: !attributes.coverImage });
+									},
+								}, 
+							),
+							i18n.__('Cover Image', 'block-shop-extender'),
+						),
+						attributes.coverImage == true && el(
+							SelectControl,
+							{
+								className: 'cover-image-size',
+								style: {marginTop: 10},
+								key: 'bs-posts-grid-cover-image-size',
+								options:
+									[
+										{ value: 'portrait',   label: i18n.__( 'Portrait', 'block-shop-extender' ) },
+										{ value: 'landscape',  label: i18n.__( 'Landscape', 'block-shop-extender' ) },
+										{ value: 'square',   	label: i18n.__( 'Square', 'block-shop-extender' ) },
+									],
+	              				value: attributes.coverImageSize,
+	              				onChange: function( value ) {
+	              					props.setAttributes( { coverImageSize: value } );
+								},
+							}
+						),
 					),
 				),
 				el( 'div',
@@ -481,7 +531,7 @@
 						'div',
 						{
 							key: 		'gbt_18_bs_editor_posts_grid_wrapper',
-							className: 	'gbt_18_bs_editor_posts_grid_wrapper columns-' + attributes.columns,
+							className: 	'gbt_18_bs_editor_posts_grid_wrapper columns-' + attributes.columns + ' cover-' + attributes.coverImage + '-' + attributes.coverImageSize,
 						},
 						attributes.result.length < 1 && attributes.doneFirstPostsLoad === false && getPosts(),
 						renderResults()

@@ -1,5 +1,5 @@
 .gbt_18_bs_posts_grid.alignfull {
-  padding: 0 20px; }
+  padding: 0 105px; }
   .gbt_18_bs_posts_grid.alignfull.columns-1 .gbt_18_bs_posts_grid_item {
     padding: 0 30px; }
   @media all and (min-width: 640px) {
@@ -90,7 +90,7 @@
       width: 100%;
       float: left; } }
   .gbt_18_bs_posts_grid .gbt_18_bs_posts_grid_wrapper .gbt_18_bs_posts_grid_item {
-    padding: 0 15px;
+    padding: 0 24px;
     margin-bottom: 2rem; }
     @media all and (max-width: 639px) {
       .gbt_18_bs_posts_grid .gbt_18_bs_posts_grid_wrapper .gbt_18_bs_posts_grid_item {
@@ -201,3 +201,28 @@
     height: 100%;
     width: 100%;
     display: block; }
+
+.gbt_18_bs_posts_grid.cover-landscape .gbt_18_post_image, .gbt_18_bs_posts_grid.cover-portrait .gbt_18_post_image, .gbt_18_bs_posts_grid.cover-square .gbt_18_post_image {
+  width: 100%;
+  height: 0;
+  position: relative; }
+  .gbt_18_bs_posts_grid.cover-landscape .gbt_18_post_image a, .gbt_18_bs_posts_grid.cover-portrait .gbt_18_post_image a, .gbt_18_bs_posts_grid.cover-square .gbt_18_post_image a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    .gbt_18_bs_posts_grid.cover-landscape .gbt_18_post_image a img, .gbt_18_bs_posts_grid.cover-portrait .gbt_18_post_image a img, .gbt_18_bs_posts_grid.cover-square .gbt_18_post_image a img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+
+.gbt_18_bs_posts_grid.cover-landscape .gbt_18_post_image {
+  padding-bottom: 56.25%; }
+
+.gbt_18_bs_posts_grid.cover-square .gbt_18_post_image {
+  padding-bottom: 100%; }
+
+.gbt_18_bs_posts_grid.cover-portrait .gbt_18_post_image {
+  padding-bottom: 133%; }

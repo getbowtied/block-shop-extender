@@ -73,6 +73,14 @@ if ( function_exists( 'register_block_type' ) ) {
 				'type'						=> 'number',
 				'default'					=> '3'
 			),
+			'coverImage'					=> array(
+				'type' 						=> 'bool',
+				'default' 					=> true
+			),
+			'coverImageSize' 				=> array(
+				'type'						=> 'string',
+				'default'					=> 'landscape'
+			),
 		),
 
 		'render_callback' => 'gbt_18_bs_render_frontend_posts_grid',
