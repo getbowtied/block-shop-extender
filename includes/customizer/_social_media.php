@@ -1,6 +1,6 @@
 <?php 
 // ---------------------------------------------
-$section = 'extender';
+$section = 'social_media';
 
 Kirki::add_field( 'block-shop', array(
     'type'        => 'repeater',
@@ -24,185 +24,31 @@ Kirki::add_field( 'block-shop', array(
             'default'     => '',
             'choices'     => array(
                 ''      => esc_attr__('Select Platform', 'block-shop'),
-                // A
-                'airbnb' => 'airbnb' ,
-                'amazon' => 'amazon' ,
-                'amplement' => 'amplement' ,
-                'android' => 'android' ,
-                'angellist' => 'angellist' ,
-                'app-net' => 'app-net' ,
-                'apple' => 'apple' ,
-
-                // B
-                'baidu' => 'baidu' ,
-                'bandcamp' => 'bandcamp' ,
-                'bebo' => 'bebo' ,
-                'behance' => 'behance' ,
-                'blogger' => 'blogger' ,
-                'buffer' => 'buffer' ,
-
-                // C
-                'coderwall' => 'coderwall' ,
-
-                // D
-                'dailymotion' => 'dailymotion' ,
-                'deezer' => 'deezer' ,
-                'delicious' => 'delicious' ,
-                'deviantart' => 'deviantart' ,
-                'digg' => 'digg' ,
-                'disqus' => 'disqus' ,
-                'douban' => 'douban' ,
-                'draugiem' => 'draugiem' ,
-                'dribbble' => 'dribbble' ,
-                'drupal' => 'drupal' ,
-
-                // E
-                'ebay' => 'ebay' ,
-                'ello' => 'ello' ,
-                'eight-tracks' => 'eight-tracks' ,
-                'endomondo' => 'endomondo' ,
-                'envato' => 'envato' ,
-
-                // F
-                'facebook' => 'facebook' ,
-                'feedburner' => 'feedburner' ,
-                'filmweb' => 'filmweb' ,
-                'five-hundred-px' => '500px' ,
-                'flattr' => 'flattr' ,
-                'flickr' => 'flickr' ,
-                'forrst' => 'forrst' ,
-                'foursquare' => 'foursquare' ,
-                'friendfeed' => 'friendfeed' ,
-
-                // G
-                'github' => 'github' ,
-                'goodreads' => 'goodreads' ,
-                'google' => 'google' ,
-                'google-play' => 'google-play' ,
-                'google-plus' => 'google-plus' ,
-                'grooveshark' => 'grooveshark' ,
-
-                // H
-                'houzz' => 'houzz' ,
-
-                // I
-                'icq' => 'icq' ,
-                'identica' => 'identica' ,
-                'imdb' => 'imdb' ,
-                'instagram' => 'instagram' ,
-                'istock' => 'istock' ,
-                'itunes' => 'itunes' ,
-
-                // J
-
-                // K
-
-                // L
-                'lanyrd' => 'lanyrd' ,
-                'last-fm' => 'last-fm' ,
-                'linkedin' => 'linkedin' ,
-
-                // M
-                'mail' => 'mail' ,
-                'medium' => 'medium' ,
-                'meetup' => 'meetup' ,
-                'mixcloud' => 'mixcloud' ,
-                'model-mayhem' => 'model-mayhem' ,
-                'mozilla-persona' => 'mozilla-persona' ,
-                'mumble' => 'mumble' ,
-                'myspace' => 'myspace' ,
-
-                // N
-                'newsvine' => 'newsvine' ,
-
-                // O
-                'odnoklassniki' => 'odnoklassniki' ,
-                'openid' => 'openid' ,
-                'outlook' => 'outlook' ,
-
-                // P
-                'patreon' => 'patreon' ,
-                'paypal' => 'paypal' ,
-                'periscope' => 'periscope' ,
-                'pinterest' => 'pinterest' ,
-                'playstation' => 'playstation' ,
-                'play-store' => 'play-store' ,
-                'pocket' => 'pocket' ,
-
-                // Q
-                'qq' => 'qq' ,
-                'quora' => 'quora' ,
-
-                // R
-                'raidcall' => 'raidcall' ,
-                'ravelry' => 'ravelry' ,
-                'reddit' => 'reddit' ,
-                'renren' => 'renren' ,
-                'resident-advisor' => 'resident-advisor' ,
-                'rss' => 'rss' ,
-
-                // S
-                'sharethis' => 'sharethis' ,
-                'skype' => 'skype' ,
-                'slideshare' => 'slideshare' ,
-                'smugmug' => 'smugmug' ,
-                'snapchat' => 'snapchat' ,
-                'soundcloud' => 'soundcloud' ,
-                'spotify' => 'spotify' ,
-                'stackexchange' => 'stackexchange' ,
-                'stackoverflow' => 'stackoverflow' ,
-                'stayfriends' => 'stayfriends' ,
-                'steam' => 'steam' ,
-                'storehouse' => 'storehouse' ,
-                'stumbleupon' => 'stumbleupon' ,
-                'swarm' => 'swarm' ,
-
-                // T
-                'teamspeak' => 'teamspeak' ,
-                'teamviewer' => 'teamviewer' ,
-                'technorati' => 'technorati' ,
-                'telegram' => 'telegram' ,
-                'tripadvisor' => 'tripadvisor' ,
-                'tripit' => 'tripit' ,
-                'triplej' => 'triplej' ,
-                'tumblr' => 'tumblr' ,
-                'twitch' => 'twitch' ,
-                'twitter' => 'twitter' ,
-
-                // U
-
-                // V
-                'ventrilo' => 'ventrilo' ,
-                'viadeo' => 'viadeo' ,
-                'vimeo' => 'vimeo' ,
-                'vine' => 'vine' ,
-                'viber' => 'viber' ,
-                'vkontakte' => 'vkontakte' ,
-
-                // W
-                'weibo' => 'weibo' ,
-                'whatsapp' => 'whatsapp' ,
-                'wikipedia' => 'wikipedia' ,
-                'windows' => 'windows' ,
-                'wordpress' => 'wordpress' ,
-                'wykop' => 'wykop' ,
-
-                // X
-                'xbox' => 'xbox' ,
-                'xing' => 'xing' ,
-
-                // Y
-                'yahoo' => 'yahoo' ,
-                'yammer' => 'yammer' ,
-                'yandex' => 'yandex' ,
-                'yelp' => 'yelp' ,
-                'younow' => 'younow' ,
-                'youtube' => 'youtube' ,
-
-                // Z
-                'zerply' => 'zerply' ,
-                'zomato' => 'zomato' ,
-                'zynga' => 'zynga' 
+                    'facebook-circled' =>'Facebook',
+                    'google-maps' =>'Google Maps',
+                    'apple-app-store' =>'Apple App Store',
+                    'google-play' =>'Google Play',
+                    'behance' =>'Behance',
+                    'foursquare' =>'Foursquare',
+                    'github' =>'Github',
+                    'help-center' =>'Help Center',
+                    'line' =>'Line',
+                    'reddit' =>'Reddit',
+                    'tumblr' =>'Tumblr',
+                    'viber' =>'Viber',
+                    'vkcom' =>'Vkcom',
+                    'weibo' =>'Weibo',
+                    'whatsapp' =>'WhatsApp',
+                    'wordpress' =>'WordPress',
+                    'yelp' =>'Yelp',
+                    'linkedin' =>'LinkedIn',
+                    'medium' =>'Medium',
+                    'google-plus-circled' =>'Google Plus Circled',
+                    'pinterest' =>'Pinterest',
+                    'facebook-messenger' =>'Facebook Messenger',
+                    'twitter' =>'Twitter',
+                    'instagram' =>'Instagram',
+                    'youtube-play-button-logo' =>'Youtube Play',
             )
             // 'active_callback' => array(
             //     array(

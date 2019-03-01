@@ -57,7 +57,7 @@ if( !function_exists('theme_warning') ) {
 	function theme_warning() {
 		?>
 		<div class="error">
-			<p>Block Shop Extender plugin couldn't find the Block Editor (Gutenberg) on this site. It requires WordPress 5+ or Gutenberg installed as a plugin.</p>
+			<p><?php _e("Block Shop Extender plugin couldn't find the Block Editor (Gutenberg) on this site. It requires WordPress 5+ or Gutenberg installed as a plugin.","block-shop-extender"); ?></p>
 		</div>
 		<?php
 	}
