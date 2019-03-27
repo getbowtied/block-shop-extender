@@ -79,7 +79,7 @@ function blockshop_social_media() {
 		if (!empty($socmed_platforms)) {
 		    foreach ($socmed_platforms as $p) {
 		        if (isset($p['platform']) && isset($p['url']) && !empty($p['platform']) && !empty($p['url'])) {
-		            echo '<a href="' . esc_url( $p['url'] ) . '"><i class="icon-social-' . $p['platform'] . '"></i></a>';
+		            echo '<a target="_blank" href="' . esc_url( $p['url'] ) . '"><i class="icon-social-' . $p['platform'] . '"></i></a>';
 		        }
 		    }
 		}
