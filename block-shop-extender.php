@@ -71,3 +71,19 @@ if( !function_exists('is_wp_version') ) {
 		return version_compare( $wp_version, $version, $operator );
 	}
 }
+
+
+function blockshop_social_media() {
+	if ( class_exists('GBT_Opt')) {
+		$socmed_platforms = GBT_Opt::getOption('social_media_platforms');
+		if (!empty($socmed_platforms)) {
+		    foreach ($socmed_platforms as $p) {
+		        if (isset($p['platform']) && isset($p['url']) && !empty($p['platform']) && !empty($p['url'])) {
+		            echo '<a href="' . esc_url( $p['url'] ) . '"><i class="icon-social-' . $p['platform'] . '"></i></a>';
+		        }
+		    }
+		}
+	}
+}
+
+add_action('blockshop_social_media', 'blockshop_social_media');
