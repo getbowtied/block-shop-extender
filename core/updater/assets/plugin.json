@@ -5,7 +5,7 @@
 
 	"homepage": "",
 	"requires": "5.0",
-	"tested": "5.0.3",
+	"tested": "5.1.1",
 	"last_updated": "2019-02-05 12:00:00",
 
 	"author": "GetBowtied",
@@ -17,12 +17,12 @@
 	},
 	
 	"icons" : {
-		"1x" : "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/block-shop-extender-128x128.png",
-		"2x" : "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/block-shop-extender-256x256.png"
+		"1x" : "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/blockshop-extender-128x128.png",
+		"2x" : "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/blockshop-extender-256x256.png"
     },
 
 	"banners": {
-		"low": "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/block-shop-banner-772x250.png",
-		"high": "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/block-shop-banner-1544x500.png"
+		"low": "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/blockshop-banner-772x250.png",
+		"high": "https://raw.githubusercontent.com/getbowtied/block-shop-extender/master/core/updater/assets/images/blockshop-banner-1544x500.png"
 	}
 }

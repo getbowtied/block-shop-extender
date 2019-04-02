@@ -10,7 +10,7 @@
  * Text Domain:				block-shop-extender
  * Domain Path:				/languages/
  * Requires at least: 		5.0
- * Tested up to: 			5.0.3
+ * Tested up to: 			5.1.1
  *
  * @package  Block Shop Extender
  * @author   GetBowtied
